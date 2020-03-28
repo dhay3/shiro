@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--引入thymeleaf头文件,th:href中的/表示协议+端口号+项目名(静态资源能之间访问到)-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Index</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/asserts/css/signin.css}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+<!--	thymeleaf请求到url时后端形式的 协议+端口+项目名-->
+<form class="form-signin" th:action="@{/login}" action="dashboard.html" >
+    <img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal" th:text="#{index.login}">Please sign in</h1>
+<!--    #string工具类 如果msg的不为空则显示消息-->
+    <p style="color:red;" th:if="${msg}" th:text="${msg}"></p>
+    <label class="sr-only" th:text="#{index.username}">Username</label>
+    <input type="text" class="form-control" th:placeholder="#{index.username}" placeholder="Username" required=""
+           autofocus="" th:name="username">
+<!--	只能通过th:从前端获取信息-->
+    <label class="sr-only" th:text="#{index.password}">Password</label>
+    <input type="password" class="form-control" th:placeholder="#{index.password}" placeholder="Password" required="" th:name="password">
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> [[#{index.remember}]]
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{index.button}">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    <a class="btn btn-sm" th:href="@{/index(lan='zh_CN')}">中文</a>
+    <a class="btn btn-sm" th:href="@{/index(lan='en_US')}">English</a>
+</form>
+
+</body>
+
+</html>

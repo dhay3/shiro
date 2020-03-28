@@ -1,0 +1,19 @@
+#spring:
+#  thymeleaf:
+#    cache: false #关闭thymeleaf缓存,2.2.5不用关闭
+#server:
+#  servlet:
+#    context-path: /chz #最好不要设置context-path有一些默认路径的静态资源会访问不到(如favicon)
+#开启国际化
+spring:
+  messages:
+    basename: prop.i18n #这是一个包名
+  mvc:
+    date-format: yyyy-MM-dd #时间日期格式化
+    hiddenmethod:
+      filter:
+        enabled: true
+server:
+  tomcat:
+    uri-encoding: utf-8
+#debug: true
