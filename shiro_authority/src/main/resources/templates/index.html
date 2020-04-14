@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--static中的静态资源同样会被拦截-->
+<a th:href="@{/add.html}" shiro:hasPermission="user:add">add</a>
+<a th:href="@{/update.html}" shiro:hasPermission="user:update">update</a>
+<br>
+<a th:href="@{/toLogin}">click</a>
+</body>
+</html>

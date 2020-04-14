@@ -1,0 +1,13 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--templates下文件只能通过controller转请求或者是直接访问static下的文件-->
+<a th:href="@{/add}">添加用户</a>
+<a th:href="@{/update}">用户更新</a>
+<!--<a href="update.html">用户更新</a>-->
+</body>
+</html>

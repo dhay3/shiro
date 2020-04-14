@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--显示用户名-->
+<p>欢迎<shiro:principal/>回来</p>
+<!--对指定的角色展示,要求是所有的角色-->
+<div shiro:hasAllRoles="admin,user">添加admin user</div>
+<div shiro:hasRole="user">添加 user</div>
+<div shiro:hasPermission="admin">删除</div>
+<div>更新</div>
+<div>查询</div>
+</body>
+</html>

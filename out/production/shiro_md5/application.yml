@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shiro?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 12345
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: chz
+        login-password: 12345
+      filters: stat,wall
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    aggressive-lazy-loading: true
+#    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      table-prefix: t_
+      id-type: auto

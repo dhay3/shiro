@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mp?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 12345
+    type: com.alibaba.druid.pool.DruidDataSource
+#druid
+    druid:
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: chz
+        login-password: 12345
+      filters: stat,wall
+#mybatis-plus
+mybatis-plus:
+  configuration:
+#    log
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto
+      logic-delete-field: flag
+  executor-type: batch
+# mybatis log
+#logging:
+#  level:
+#    com.chz.dao: debug
+
