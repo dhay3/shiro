@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MyController {
@@ -40,11 +39,6 @@ public class MyController {
     @GetMapping("/toLogin")
     public String toLogin() {
         return "login";
-    }
-    @RequestMapping("/unAuthc")
-//    @ResponseBody
-    public String unAuthc(){
-        return "/failed";
     }
 
     @PostMapping("/login")

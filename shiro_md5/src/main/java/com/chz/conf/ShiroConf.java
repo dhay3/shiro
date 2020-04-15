@@ -20,6 +20,7 @@ public class ShiroConf {
         filterMap.put("/", "anon");
         filterMap.put("/index", "anon");
         filterMap.put("/login", "anon");
+        filterMap.put("/logout","anon");
         filterMap.put("/**", "authc");
         //如果通过注解形式配置权限,setUnauthorizedUrl不会生效
         shiroFilterFactoryBean.setUnauthorizedUrl("/unAuthc");
